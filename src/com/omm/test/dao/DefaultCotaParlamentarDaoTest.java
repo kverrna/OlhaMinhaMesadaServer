@@ -24,8 +24,9 @@ public class DefaultCotaParlamentarDaoTest {
 		DefaultCotaParlamentarDao dao = new DefaultCotaParlamentarDao();
 		assertNotNull(dao.getEntityManagerFactory());
 	}
+	
 	@Test
-	public void testEntityManagerSame(){
+	public void testEntityManagerSame() {
 		DefaultCotaParlamentarDao dao1 = new DefaultCotaParlamentarDao();
 		DefaultCotaParlamentarDao dao2 = new DefaultCotaParlamentarDao();
 	
