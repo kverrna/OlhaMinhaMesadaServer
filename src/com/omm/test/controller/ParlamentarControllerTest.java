@@ -1,24 +1,24 @@
 package com.omm.test.controller;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
+
+import com.omm.controller.CotaParlamentarController;
 
 public class ParlamentarControllerTest {
-
+	
+	private CotaParlamentarController ParlamentarController;
+	
 	@Before
 	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
+		ParlamentarController = Mockito.mock(CotaParlamentarController.class);
+		ParlamentarController.listar("João");
+		}
+	
 	@Test
 	public void test() {
-		fail("Not yet implemented");
-	}
+		Mockito.verify(ParlamentarController).listar("João");
+		}
 
 }
