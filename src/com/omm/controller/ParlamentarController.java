@@ -14,8 +14,8 @@ public class ParlamentarController {
 		dao = new DefaultParlamentarDao();
 	}
 	
-	public List<Parlamentar> listar(String nome) {
-		return dao.listar(nome);
+	public List<Parlamentar> listar(String id) {
+		return dao.listar(id);
 	}
 	
 }
