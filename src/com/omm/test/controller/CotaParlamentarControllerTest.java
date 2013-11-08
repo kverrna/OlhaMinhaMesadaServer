@@ -20,9 +20,4 @@ public class CotaParlamentarControllerTest {
 	public void test() throws Exception {
 		Mockito.verify(cotaParlamentarController).listar("1");
 		}
-	
-	@Test
-	public void testIsNotNull() throws Exception {
-		
-	}
 }
