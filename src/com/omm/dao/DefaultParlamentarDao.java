@@ -10,9 +10,11 @@ import com.omm.model.Parlamentar;
 public class DefaultParlamentarDao extends DataAccessObject implements ParlamentarDao{
 
 	public List<Parlamentar> listar(String id) {
+		int numId = Integer.parseInt(id);
 		EntityManager manager = getEntityManagerFactory().createEntityManager();
-		Query query = manager.createQuery("SELECT p FROM Parlamentar p WHERE p.id LIKE :id");
-		query.setParameter("id", id+"%");
+		
+		Query query = manager.createQuery("SELECT p FROM Parlamentar p WHERE p.id = :id");
+		query.setParameter("id", numId);
 		
 		List<Parlamentar> resultado = (List<Parlamentar>) query.getResultList();
 		

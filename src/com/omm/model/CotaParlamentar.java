@@ -202,5 +202,13 @@ public class CotaParlamentar {
 	public void setEspecificacao(String especificacao) {
 		this.especificacao = especificacao;
 	}
+	
+//	public void setIdParlamentar(int id) {
+//		this.idParlamentar = id;
+//	}
+	
+	//public int getIdParlmanetar() {
+	//	return this.idParlamentar;
+//	}
 
 }
