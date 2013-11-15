@@ -4,21 +4,26 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.omm.controller.CotaParlamentarController;
+import com.omm.controller.ParlamentarController;
 
 public class ParlamentarControllerTest {
 	
-	private CotaParlamentarController ParlamentarController;
+	private com.omm.controller.ParlamentarController parlamentarController;
 	
 	@Before
 	public void setUp() throws Exception {
-		ParlamentarController = Mockito.mock(CotaParlamentarController.class);
-		ParlamentarController.listar("João");
-		}
+		parlamentarController = Mockito.mock(ParlamentarController.class);
+		parlamentarController.findParlamentarById("1");
+		parlamentarController.getAllParlamentares();
+	}
 	
 	@Test
-	public void test() {
-		Mockito.verify(ParlamentarController).listar("João");
-		}
-
+	public void testFindParlamentarById() {
+		Mockito.verify(parlamentarController).findParlamentarById("1");
+	}
+	
+	@Test
+	public void testGetAllParlamentares() {
+		Mockito.verify(parlamentarController).getAllParlamentares();
+	}
 }

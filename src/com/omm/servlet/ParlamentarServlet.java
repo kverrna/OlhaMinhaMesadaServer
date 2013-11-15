@@ -28,7 +28,7 @@ public class ParlamentarServlet extends HttpServlet {
 		
 		ParlamentarController controller = new ParlamentarController();
 		
-		List<Parlamentar> lista = controller.listar(id);
+		List<Parlamentar> lista = controller.findParlamentarById(id);
 
 		String json = JSONHelper.toJSON(lista);
 		

@@ -23,4 +23,17 @@ public class DefaultParlamentarDao extends DataAccessObject implements Parlament
 		
 		return resultado;
 	}
+
+	public List<Parlamentar> getAllParlamentares() {
+		
+		EntityManager manager = getEntityManagerFactory().createEntityManager();
+		
+		Query query = manager.createQuery("SELECT p FROM Parlamentar p");
+		
+		List<Parlamentar> resultado = (List<Parlamentar>) query.getResultList();
+		
+		manager.close();
+		
+		return resultado;
+	}
 }
