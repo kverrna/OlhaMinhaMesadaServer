@@ -24,11 +24,11 @@ public class ParlamentarServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
-		String nome = request.getParameter("nome");
+		String id = request.getParameter("id");
 		
 		ParlamentarController controller = new ParlamentarController();
 		
-		List<Parlamentar> lista = controller.listar(nome);
+		List<Parlamentar> lista = controller.listar(id);
 
 		String json = JSONHelper.toJSON(lista);
 		
