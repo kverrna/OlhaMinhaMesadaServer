@@ -11,6 +11,7 @@ public class DefaultParlamentarDao extends DataAccessObject implements Parlament
 
 	public List<Parlamentar> listar(String id) {
 		int numId = Integer.parseInt(id);
+
 		EntityManager manager = getEntityManagerFactory().createEntityManager();
 		
 		Query query = manager.createQuery("SELECT p FROM Parlamentar p WHERE p.id = :id");

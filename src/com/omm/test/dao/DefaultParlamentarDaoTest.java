@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.omm.dao.DefaultParlamentarDao;
+
 public class DefaultParlamentarDaoTest {
 
 	@Before
@@ -17,8 +19,18 @@ public class DefaultParlamentarDaoTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testEntityManangerFactoryNotNull() {
+		DefaultParlamentarDao dao = new DefaultParlamentarDao();
+		assertNotNull(dao.getEntityManagerFactory());
+	}
+	
+	@Test
+	public void testEntityManangerSame() {
+		DefaultParlamentarDao dao1 = new DefaultParlamentarDao();
+		DefaultParlamentarDao dao2 = new DefaultParlamentarDao();
+		
+		assertEquals(dao1.getEntityManagerFactory(), dao2.getEntityManagerFactory());
+		
 	}
 
 }

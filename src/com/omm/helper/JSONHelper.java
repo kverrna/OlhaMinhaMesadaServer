@@ -6,7 +6,6 @@ public abstract class JSONHelper {
 	public static String toJSON(Object param) {
 
 		Gson gson = new Gson();
-		
 
 		return gson.toJson(param);
 	}
